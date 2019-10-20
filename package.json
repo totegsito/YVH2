@@ -1,0 +1,65 @@
+{
+  "name": "seedtag",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/src/index.js",
+    "dev": "tsc -w | nodemon dist/src",
+    "lint": "tslint -c tslint.json 'src/**/*.ts'",
+    "test": "export NODE_ENV=test || SET \"NODE_ENV=test\" && jest",
+    "test:coverage": "export NODE_ENV=test || SET \"NODE_ENV=test\" && jest --coverage",
+    "test:continous": "export NODE_ENV=test || SET \"NODE_ENV=test\" && jest --watchAll"
+  },
+  "jest": {
+    "globals": {
+      "ts-jest": {
+        "tsConfigFile": "tsconfig.json"
+      }
+    },
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "transform": {
+      "^test/.+test.(ts|tsx)$": "ts-jest"
+    },
+    "testURL": "http://localhost/",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "collectCoverage": true,
+    "coverageDirectory": "./coverage",
+    "collectCoverageFrom": [
+      "src/**/*.{ts}",
+      "src/**/**/*.{ts}",
+      "!src/config/*.{ts}",
+      "!src/models/protocols/index.ts"
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "restify": "^8.4.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.1",
+    "@types/node": "^12.11.1",
+    "@types/node-fetch": "^2.1.2",
+    "@types/restify": "^7.2.3",
+    "axios": "^0.19.0",
+    "jest": "^23.4.2",
+    "nodemon": "^1.19.4",
+    "ts-jest": "^23.1.2",
+    "ts-loader": "^4.4.2",
+    "tslint": "^5.11.0",
+    "tslint-config-airbnb": "^5.9.2",
+    "tslint-loader": "^3.6.0",
+    "typescript": "^3.0.1",
+    "webpack": "^4.16.4",
+    "webpack-cli": "^3.1.0",
+    "webpack-node-externals": "^1.7.2"
+  }
+}
