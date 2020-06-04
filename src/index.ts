@@ -14,7 +14,7 @@ const respond =  (req:restify.Request, res:restify.Response, next:restify.Next) 
 };
 
 export const server = restify.createServer({
-  name: 'Seedtag test',
+  name: 'test',
   version: '0.1.0',
 });
 server.use(restify.plugins.bodyParser());
