@@ -15,7 +15,7 @@ var respond = function (req, res, next) {
     }
 };
 exports.server = restify.createServer({
-    name: 'Seedtag test',
+    name: 'test',
     version: '0.1.0'
 });
 exports.server.use(restify.plugins.bodyParser());
